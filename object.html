@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section{
+        /* max-width: 800px; fix co giãn size khi resize */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .add__product {
+        width: 500px;
+        padding: 30px;
+        margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(237, 237, 237);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.5);
+      }
+      input {
+        margin-bottom: 10px;
+      }
+      button {
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.05);
+        padding: 10px;
+        background-color: #f7442e;
+        border: none;
+        color: #fff;
+        font-size: 18px;      
+      }
+      button:hover{
+        opacity: 0.8;
+      }
+      .btn_back{
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        margin: 20px 0 10px 0;
+      }
+      .btn_back a{
+        margin-bottom: 20px;
+        text-decoration: none;
+        font-size: 20px;
+        cursor: pointer;
+        width: 400px;
+        padding: 0 10px;
+      }
+      .btn_back a:hover{
+        letter-spacing: 2px;
+        color: red;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+   <section>
+    <nav id="nav-bar">
+      <ul class="menu-lever-1">
+
+        <li class="item-level-1">
+          <a href="./list_Product.html" class="item-level-1-title">Home</a>
+        </li>
+
+        <li class="item-level-1">
+          <a href="#" class="item-level-1-title">Search-Page</a>
+          <ul class="menu-level-2">
+            <li class="item-level-2">
+              <a href="./2_getid_object.html" class="item-level-2-title">Search-Product</a>
+            </li>
+            <li class="item-level-2">
+              <a href="#" class="item-level-2-title">Comming soon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="item-level-1">
+          <a href="#" class="item-level-1-title">Add-Page</a>
+          <ul class="menu-level-2">
+            <li class="item-level-2">
+              <a href="./object.html" class="item-level-2-title">Add Product</a>
+            </li>
+            <li class="item-level-2">
+              <a href="#" class="item-level-2-title">Comming soon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="item-level-1">
+          <a href="./cart.html"> <i class="item-cart fa fa-shopping-cart"></i></a>
+         </li>
+      </ul>
+    </nav>
+   <div class="main-container">
+  
+   <div class="add__product">
+     <label for="hinhanh">Hình Ảnh</label>
+     <input type="text" id="hinhanh" placeholder="Nhập địa chỉ sao chép từ sao chép địa chỉ hình ảnh trên website..."/>
+
+     <label for="tensanpham">Tên Sản Phẩm</label>
+     <input type="text" id="ten" placeholder="Tên sản phẩm..."/>
+
+     <label for="giagoc">Giá Gốc</label>
+     <input type="text" id="giagoc" placeholder="Giá gốc..."/>
+
+     <label for="phantramgiamgia">Giảm giá (0.1% - 1%)  </label>
+     <input type="number" id="phantramgiamgia" placeholder="ví dụ: 0.1 = 10%, 1 = 100%,..."/>
+
+     <label for="phantramgiamgia">Khu Vực </label>
+     <input type="text" id="khuvuc" placeholder="Khu vực của sản phẩm..."/>
+
+     <button id="btn">Create</button>
+  
+  </div>
+  <div class="btn_back">
+    <div class="btn home-page">
+     <!-- <a href="./list_Product.html">Back to Admin</a> -->
+    </div>
+    <!-- <div class="btn search-page">
+     <a href="./2_getid_object.html">Về Trang tìm kiếm</a>
+    </div> -->
+  </div> 
+  </div>
+  </section>
+  
+
+    <!-- javascript area --> 
+    <script src="app/id.js"></script>
+    <script src="app/product.js"></script>
+    <script src="./app/cart.js"></script>
+    <script>
+      // // tạo một đối tượng
+      // function cachtao1doituong (id, tên, giagoc){
+      //     var sanpham = new Object();
+      //     sanpham.id = id;
+      //     sanpham.tên = tên;
+      //     sanpham.giagoc = giagoc;
+      //     return sanpham
+      // }
+
+      //  var iphone5 = cachtao1doituong(1,'iphone5', 2000)
+      //  var iphone6 = cachtao1doituong(1,'iphone6', 2000)
+
+      //  var arr = []
+      //  arr.push(iphone5,iphone6)
+
+      //  var result = arr.map(values=>{
+      //      return ` đây là tên :${values.tên}`
+      //    })
+      //   const show = document.querySelector('#showProduct')
+      //   show.innerHTML = result.join('')
+   
+   
+
+   
+  
+
+    // tạo 1 biến document để xài nhanh trong việc truy cập NODE
+  var $ = document.querySelector.bind(document);
+    var ListP = []
+    var btn = $('#btn')
+    btn.onclick = function(){
+      var nodeImage = $('#hinhanh')
+      var image = nodeImage.value;
+      nodeImage.value = '';
+
+      var nodeName = $('#ten')
+      var name = nodeName.value
+      nodeName.value = '';
+
+      var originalPrice = $('#giagoc')
+      var oriPrice = originalPrice.value
+      var price = parseInt(oriPrice);
+      originalPrice.value = '';
+
+      var percentPrice = $('#phantramgiamgia')
+      var pPrice = percentPrice.value ;
+      var perPrice = parseFloat(pPrice);
+      percentPrice.value = '';
+
+      var area = $('#khuvuc')
+      var kv = area.value
+      area.value = '';
+    //  console.log(area);
+      // 0. kiểm tra dữ liệu trên localStorage 
+     var listproduct = JSON.parse(localStorage.getItem('listProduct'))
+        if (listproduct == null){
+          var listproduct = []
+        }
+          // tạo 1 sản phẩm 
+          var sp = product(image, name, price, perPrice, kv, null)  
+        // push sản phẩm vào list 
+          listproduct.push(sp)
+         // chuyển list sang Json
+         var list = JSON.stringify(listproduct)
+
+       // push dữ liệu trên localStorage
+        localStorage.setItem('listProduct', list)
+
+    }
+   
+
+    
+  
+  </script>
+  </body>
+</html>

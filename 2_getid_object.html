@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get ID</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .main-func{
+      max-width: 1200px;
+      margin: auto;
+    }
+    .paging{
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-around;
+      width: 1200px;
+      align-items: center;
+      text-align: center;
+    }
+    .fun{
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        border-radius: 6px;
+    }
+    .title{
+      padding-bottom: 20px;
+    }
+    #find{
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #find:hover{
+      transition: 0.5s ease-in-out;
+      letter-spacing: 2px;
+      filter: brightness(90%);
+    }
+    .show{
+      background-color: antiquewhite;
+      border-radius: 6px;
+      padding: 20px;
+    }
+  </style>
+   <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <nav id="nav-bar">
+    <ul class="menu-lever-1">
+
+      <li class="item-level-1">
+        <a href="./list_Product.html" class="item-level-1-title">Home</a>
+      </li>
+
+      <li class="item-level-1">
+        <a href="#" class="item-level-1-title">Search-Page</a>
+        <ul class="menu-level-2">
+          <li class="item-level-2">
+            <a href="./2_getid_object.html" class="item-level-2-title">Search-Product</a>
+          </li>
+          <li class="item-level-2">
+            <a href="#" class="item-level-2-title">Comming soon</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-level-1">
+        <a href="#" class="item-level-1-title">Add-Page</a>
+        <ul class="menu-level-2">
+          <li class="item-level-2">
+            <a href="./object.html" class="item-level-2-title">Add Product</a>
+          </li>
+          <li class="item-level-2">
+            <a href="#" class="item-level-2-title">Comming soon</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-level-1">
+        <a href="./cart.html"> <i class="item-cart fa fa-shopping-cart"></i></a>
+       </li>
+    </ul>
+  </nav>
+  <div class="main-func">
+    <div class="paging">
+    <div class="fun">
+  <label class="title" for="research">Enter to Search...!</label>
+  <input type="text" placeholder="nhập id để tìm kiếm..." id="research">
+  <button id="find">Search</button>
+</div>
+
+  <div class="show">
+    <span>Thông tin sản phẩm </span>
+    <!-- <div class="item">
+    
+      <div class="show-id">id sản phẩm: ${product.id}</div>
+      <div class="item-thumb">
+        <img src="${product.img}" alt="">
+      </div>
+      <h2 class="item-title">${product.name}</h2>
+      <div class="item-price">
+        <span class="item-price-origin">Giá: ${product.price}đ</span>
+        <span class="item-price-sale">Giá bán:${product.afterPrice()}đ</span>
+      </div>
+      <button class="btn btn-primary">Đưa vào giỏ hàng</button>
+    </div> -->
+
+
+  </div>
+</div>
+  </div>
+ 
+<!-- javascript -->
+  <script src="app/id.js"></script>
+  <script src="app/product.js"></script>
+  <script src="./app/cart.js"></script>
+
+  <script>
+    var find = document.querySelector('#find');
+    var input = document.querySelector('#research')
+    find.onclick = function(){
+      var newSanPham = []
+      var resValue = input.value;  
+        // truy xuất đối tượng theo id 
+        var sanpham = getElementByIds(resValue);
+        var convert = product().convert(sanpham)
+        newSanPham.push(convert)
+       var showhtml = render(newSanPham);
+       var show = document.querySelector('.show')
+       show.innerHTML = showhtml;   
+    }
+   
+  
+
+  </script>
+  
+</body>
+</html>

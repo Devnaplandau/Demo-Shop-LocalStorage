@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart UI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .main-content{
+      /* width: 100%; */
+      min-height: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+  <nav id="nav-bar">
+    <ul class="menu-lever-1">
+
+      <li class="item-level-1">
+        <a href="./list_Product.html" class="item-level-1-title">Home</a>
+      </li>
+
+      <li class="item-level-1">
+        <a href="#" class="item-level-1-title">Search-Page</a>
+        <ul class="menu-level-2">
+          <li class="item-level-2">
+            <a href="./2_getid_object.html" class="item-level-2-title">Search-Product</a>
+          </li>
+          <li class="item-level-2">
+            <a href="#" class="item-level-2-title">Comming soon</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-level-1">
+        <a href="#" class="item-level-1-title">Add-Page</a>
+        <ul class="menu-level-2">
+          <li class="item-level-2">
+            <a href="./object.html" class="item-level-2-title">Add Product</a>
+          </li>
+          <li class="item-level-2">
+            <a href="#" class="item-level-2-title">Comming soon</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-level-1">
+       <a href="./cart.html"> <i class="item-cart fa fa-shopping-cart"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- xây dựng layout cho 1 item -> html, css -->
+  <div class="content-title">
+    <h1 class="main-title">Danh sách sản phẩm</h1>
+     <div class="item__cart-title">
+          <div class="img-title">
+          </div>
+          <p class="name-title">Sản phẩm</p>
+          <div class="price-title">
+           Đơn giá
+          </div>
+         <p class="quantity-title">Số lượng</p>
+          <p class="total-title">Tổng tiền</p>
+          <div class="active-title">
+           <p>Thao tác</p>
+          </div>
+        </div>
+      <div class="cart">
+        <!-- <div class="item__cart">
+          <div class="img">
+            <img src="https://sudospaces.com/eshop/2021/09/4-dien-thoai-apple-iphone-13-pro-1632276335-large.png" alt="">
+          </div>
+          <p class="name">Iphone 5</p>
+          <div class="price">
+            <span class="originPrice">5000000 đ</span>
+            <span class="buyPrice">4000000 đ</span>
+          </div>
+          <input type="number" name="" class="quantity" value="1">
+          <p class="total">4000000 đ</p>
+          <div class="active">
+            <i class="active-icon fa fa-trash"></i>
+          </div>
+        </div> -->
+   
+       
+      </div>
+    </div>
+      <div class="caculator">
+      <div class="content">
+        <span>Tổng tiền tạm tính:</span>
+        <p class="total-all"></p>
+      </div>
+      </div>
+
+
+      <!-- thông tin khách hàng -->
+      <div class="info-customer">
+      </div>
+      <!-- Footer -->
+      <section id="footer">Copyright by @An 2021</section>
+    </div>
+  <!-- hàm convert 1 đối tượng đối tượng thành html = js == 0k -->
+  <!-- hàm convert 1 danh sách đối tượng đối tượng thành html = js -->
+  <!-- gán nó vào node chuyển sang html trên website = js  -->
+  <script src="./app/product.js"></script>
+  <script src="./app/cart.js"></script>
+  <script src="./app/id.js"></script>
+  <script>
+      var showListCart = document.querySelector('.cart')
+      var saveDataCart = getAllItemCarts()
+      var html = convertItemCartObjectToHTML(saveDataCart);
+      showListCart.innerHTML = html
+  </script>
+</body>
+</html>

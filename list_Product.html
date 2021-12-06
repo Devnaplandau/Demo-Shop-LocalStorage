@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách sản phẩm - An</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>  
+    <nav id="nav-bar">
+      <ul class="menu-lever-1">
+
+        <li class="item-level-1">
+          <a href="./list_Product.html" class="item-level-1-title">Home</a>
+        </li>
+
+        <li class="item-level-1">
+          <a href="#" class="item-level-1-title">Search-Page</a>
+          <ul class="menu-level-2">
+            <li class="item-level-2">
+              <a href="./2_getid_object.html" class="item-level-2-title">Search-Product</a>
+            </li>
+            <li class="item-level-2">
+              <a href="#" class="item-level-2-title">Comming soon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="item-level-1">
+          <a href="#" class="item-level-1-title">Add-Page</a>
+          <ul class="menu-level-2">
+            <li class="item-level-2">
+              <a href="./object.html" class="item-level-2-title">Add Product</a>
+            </li>
+            <li class="item-level-2">
+              <a href="#" class="item-level-2-title">Comming soon</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="item-level-1">
+         <a href="./cart.html"> <i class="item-cart fa fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <section id="slider">
+      <div class="img">
+        <img src="https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-blue-minimalist-technology-computer-banner-image_178469.jpg" alt="" srcset="">
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="items">
+
+         <!-- <div class="item">
+          <div class="show-id">1637250300874</div>
+          <div class="item-thumb">
+            <img src="https://hcm.clickbuy.com.vn/uploads/2019/09/avt-ip-11-purple.png" alt="">
+          </div>
+          <h2 class="item-title">Iphone 13 mini 2342342342
+            Iphone 13 mini 2342342342
+            Iphone 13 mini 2342342342
+          </h2>
+          <div class="main-info">       
+          <div class="item-price">
+            <span class="item-price-origin">5000000 đ</span>
+            <span class="item-price-sale">4000000 đ</span>
+          </div>
+          <button class="btn btn-primary">Đưa vào giỏ hàng</button>
+        </div>
+      </div> -->
+       
+     
+      </div>
+    </section>
+
+
+    <section id="footer">Copyright by @An 2021</section>
+
+
+    <!-- khu vực javascript -->
+    <script src="app/id.js"></script>
+    <script src="app/product.js"></script>
+    <script src="./app/cart.js"></script>
+  <script>
+    
+        //  1.lấy d/s sản phẩm dưới localStorage   
+        var loadLocal = localStorage.getItem('listProduct')
+        const get = product().fromJSONS(loadLocal)
+        // console.log(get);
+        // 2. chuyển d/s sang html
+        var html = render(get);
+        // console.log(spnew);
+        // 3. gắn đoạn html vào nodeElement
+        var nodeProducts = document.querySelector('.items')
+        nodeProducts.innerHTML = html     
+  </script>
+  </body>
+</html>
+
+<!-- mới thêm dòng comment nè -->
